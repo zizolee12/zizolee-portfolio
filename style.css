@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Popponns', sans-serif;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+body{
+    background-color: black;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: black;
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px (0, 0, 0, 0.05);
+}
+
+.logo{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff6600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    margin-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease;
+    font-size: 1.3rem;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a:active{
+    color: #ff6600;
+    border-bottom: 3px solid #ff6600;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f0f4ff,#ffffff);
+}
+
+.home-img img{
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.home-content{
+    max-width: 500px;
+    animation: fadeInUp 1s ease forwards;
+    margin-bottom: 100px;
+}
+
+.home-content h1{
+    font-size: 2.8rem;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.home-content h1 span{
+    color: #ff6600;
+    font-weight: 700;
+}
+
+.typing-content h3 span{
+    color: #ff6600;
+    font-weight: 400;
+}
+
+.intro{
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #555;
+}
+
+.hire-btn{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hire-btn{
+    background: linear-gradient(130deg, black);
+    color: #ff6600;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.hire-btn:hover{
+    transform: scale(1.1);
+    box-shadow: inset;
+}
+
+@keyframes fadeInUp{
+    from{
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media(max-width:950){
+    nav{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #ff6600;
+        border-bottom: 3px solid #ff6600;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+    nav.active{
+        display: block;
+    }
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem;
+    }
+    nav a:hover,
+    nav a:active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #ff6600;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background-color: #ff6600;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: #333;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #ff6600;
+}
