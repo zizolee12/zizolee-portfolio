@@ -10,7 +10,9 @@
 }
 
 body{
-    background-color: black;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 header{
@@ -18,11 +20,13 @@ header{
     top: 0;
     z-index: 1000;
     background: black;
-    padding: 15px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px (0, 0, 0, 0.05);
+    padding: 10px 20px;
+    color: #fff;
+    flex-wrap: wrap;
 }
 
 .logo{
@@ -202,19 +206,68 @@ nav a:active{
     background-color: #ff6600;
 }
 
-/* Add this for better mobile layout */
-@media (max-width: 300px) {
-    .home {
-        flex-direction: block;
-        padding: 30px 5%;
-        min-height: auto;
-    }
-    .home-img img {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-    .home-content {
-        margin-bottom: 30px;
-        max-width: 100%;
-    }
+/* Navigation */
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+}
+
+nav a.active {
+  border-bottom: 2px solid #ff6600;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #333;
+  z-index: 1;
+  min-width: 100px;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 5px;
+  color: white;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section.home {
+    padding: 10px;
+  }
+
+  .home-content h1, 
+  .home-content h3, 
+  .home-content p {
+    font-size: 16px;
+  }
+
+  .hire-btn {
+    margin-top: 10px;
+  }
 }
