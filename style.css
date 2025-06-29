@@ -203,9 +203,9 @@ nav a:active{
 }
 
 /* Add this for better mobile layout */
-@media (max-width: 700px) {
+@media (max-width: 300px) {
     .home {
-        flex-direction: column;
+        flex-direction: block;
         padding: 30px 5%;
         min-height: auto;
     }
