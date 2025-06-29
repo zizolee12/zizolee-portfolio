@@ -13,6 +13,7 @@ body{
   background-color: black;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  font-size: 16px; /* base for rem/em units */
 }
 
 header{
@@ -23,8 +24,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px (0, 0, 0, 0.05);
-    padding: 10px 20px;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
+    padding: 0.625rem 1.25rem; /* 10px 20px */
     color: #fff;
     flex-wrap: wrap;
 }
@@ -33,7 +34,7 @@ header{
     font-size: 1.8rem;
     font-weight: bold;
     color: #ff6600;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem; /* 1px */
     text-decoration: none;
     cursor: pointer;
     transition: 0.5s ease;
@@ -44,47 +45,52 @@ header{
 }
 
 nav a{
-    margin-left: 30px;
+    margin-left: 2rem;
     text-decoration: none;
     color: white;
     font-weight: 500;
     transition: 0.3s ease;
     font-size: 1.3rem;
-    border-bottom: 3px solid transparent;
+    border-bottom: 0.1875rem solid transparent; /* 3px */
 }
 
-nav a:hover,
+nav a:hover{
+    color: #ff6600;
+    border-bottom: 0.1875rem solid #ff6600;
+}
+
 nav a:active{
     color: #ff6600;
-    border-bottom: 3px solid #ff6600;
+    border-bottom: 0.1875rem solid #ff6600;
 }
 
 .home{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 10%;
+    padding: 3.75rem 10vw; /* 60px 10% */
     min-height: 100vh;
     background: linear-gradient(to right, #f0f4ff,#ffffff);
+    flex-wrap: wrap;
 }
 
 .home-img img{
     width: 100%;
-    max-width: 450px;
-    border-radius: 20px;
+    max-width: 28.125rem; /* 450px */
+    border-radius: 1.25rem; /* 20px */
     box-shadow: none;
 }
 
 .home-content{
-    max-width: 500px;
+    max-width: 31.25rem; /* 500px */
     animation: fadeInUp 1s ease forwards;
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem; /* 100px */
 }
 
 .home-content h1{
     font-size: 2.8rem;
     color: #222;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem; /* 15px */
 }
 
 .home-content h1 span{
@@ -100,24 +106,21 @@ nav a:active{
 .intro{
     font-size: 1rem;
     line-height: 1.6;
-    margin-top: 10px;
+    margin-top: 0.625rem; /* 10px */
     color: #555;
 }
 
 .hire-btn{
     text-align: center;
-    margin-top: 10px;
-}
-
-.hire-btn{
+    margin-top: 0.625rem; /* 10px */
     background: linear-gradient(130deg, black);
     color: #ff6600;
-    padding: 10px 20px;
-    font-size: 15px;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    font-size: 0.9375rem; /* 15px */
     font-weight: bold;
     text-decoration: none;
     border: none;
-    border-radius: 20px;
+    border-radius: 1.25rem; /* 20px */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-block;
 }
@@ -138,15 +141,15 @@ nav a:active{
     }
 }
 
-@media(max-width:950px){
+@media (max-width: 950px) {
     nav{
         position: absolute;
         top: 100%;
         right: 0;
-        width: 40%;
-        border-left: 3px solid #ff6600;
-        border-bottom: 3px solid #ff6600;
-        padding: 1rem solid;
+        width: 60vw;
+        border-left: 0.1875rem solid #ff6600;
+        border-bottom: 0.1875rem solid #ff6600;
+        padding: 1rem;
         background-color: #161616;
         border-top: 0.1rem solid rgba(0,0,0,0.1);
     }
@@ -156,7 +159,7 @@ nav a:active{
     nav a{
         display: block;
         font-size: 2rem;
-        margin: 3rem;
+        margin: 2rem 0;
     }
     nav a:hover,
     nav a:active{
@@ -164,12 +167,64 @@ nav a:active{
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid #ff6600;
     }
+    .home{
+        flex-direction: column;
+        padding: 2rem 5vw;
+        text-align: center;
+    }
+    .home-content{
+        margin-bottom: 2rem;
+    }
+    .home-img img{
+        max-width: 80vw;
+        margin: 0 auto;
+    }
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 0.5rem 0.5rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .home-content h1 {
+        font-size: 2rem;
+    }
+    .home-img img {
+        max-width: 95vw;
+    }
+    .home {
+        padding: 1rem 2vw;
+    }
 }
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 1.25rem; /* 20px */
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3125rem; /* 5px */
+}
+
+nav a.active {
+  border-bottom: 0.125rem solid #ff6600; /* 2px */
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: block;
+}
+
 .dropbtn {
     background-color: #ff6600;
     color: white;
@@ -180,14 +235,15 @@ nav a:active{
     border-radius: 4px;
 }
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    border-radius: 4px;
-    overflow: hidden;
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #333;
+  z-index: 1;
+  min-width: 6.25rem; /* 100px */
+  padding: 0.625rem; /* 10px */
+  border-radius: 4px;
+  overflow: hidden;
 }
 .dropdown-content a {
     color: #333;
@@ -198,76 +254,9 @@ nav a:active{
 }
 .dropdown-content a:hover {
     background-color: #f1f1f1;
+    color: #ff6600;
+    display: block;
 }
 .dropdown:hover .dropdown-content {
     display: block;
-}
-.dropdown:hover .dropbtn {
-    background-color: #ff6600;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  padding: 5px;
-}
-
-nav a.active {
-  border-bottom: 2px solid #ff6600;
-}
-
-/* Dropdown styling */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #333;
-  z-index: 1;
-  min-width: 100px;
-  padding: 10px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 5px;
-  color: white;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  section.home {
-    padding: 10px;
-  }
-
-  .home-content h1, 
-  .home-content h3, 
-  .home-content p {
-    font-size: 16px;
-  }
-
-  .hire-btn {
-    margin-top: 10px;
-  }
 }
