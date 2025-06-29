@@ -134,7 +134,7 @@ nav a:active{
     }
 }
 
-@media(max-width:950){
+@media(max-width:950px){
     nav{
         position: absolute;
         top: 100%;
@@ -200,4 +200,21 @@ nav a:active{
 }
 .dropdown:hover .dropbtn {
     background-color: #ff6600;
+}
+
+/* Add this for better mobile layout */
+@media (max-width: 700px) {
+    .home {
+        flex-direction: column;
+        padding: 30px 5%;
+        min-height: auto;
+    }
+    .home-img img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .home-content {
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
 }
